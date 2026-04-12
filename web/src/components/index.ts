@@ -1,0 +1,8 @@
+export { Navbar } from './Navbar';
+export { Hero } from './Hero';
+export { SearchForm } from './SearchForm';
+export { PopularRoutes } from './PopularRoutes';
+export { HowItWorks } from './HowItWorks';
+export { Features } from './Features';
+export { Testimonials } from './Testimonials';
+export { Footer } from './Footer';
