@@ -63,19 +63,20 @@ BokTravel/
 
 ## 🌐 Deployment
 
-This project is configured for **Vercel** deployment.
+This project is configured for **Vercel** deployment. A root-level `vercel.json` handles everything automatically — no dashboard changes required.
 
-### Deploy to Vercel
+### Deploy to Vercel (zero-config)
 
 1. Connect your GitHub repository to Vercel
-2. Set the root directory to `web`
-3. Vercel will automatically detect Vite and configure the build
+2. Leave all build settings at their defaults — `vercel.json` at the repo root configures everything
+3. Deploy 🚀
 
-**Build Settings:**
-- Framework Preset: Vite
-- Root Directory: `web`
-- Build Command: `npm run build`
-- Output Directory: `dist`
+Vercel will automatically:
+- Run `cd web && npm install && npm run build`
+- Serve the output from `web/dist`
+- Rewrite all routes to `/index.html` for single-page app navigation
+
+> **Note:** The `web/vercel.json` is kept for local `vercel dev` usage inside the `web/` directory. The root `vercel.json` is what Vercel uses in production.
 
 ## 🛠️ Tech Stack
 
