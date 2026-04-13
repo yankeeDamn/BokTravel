@@ -1,5 +1,9 @@
 import type { Route } from '../types';
 
+interface PopularRoutesProps {
+  onBookRoute?: (route: Route) => void;
+}
+
 const popularRoutes: Route[] = [
   {
     id: '1',
@@ -27,14 +31,14 @@ const popularRoutes: Route[] = [
   },
 ];
 
-export function PopularRoutes() {
+export function PopularRoutes({ onBookRoute }: PopularRoutesProps) {
   return (
-    <section id="routes" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="routes" className="py-20 bg-gradient-to-b from-gray-950 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Explore</span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">Popular Routes</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Explore</span>
+          <h2 className="text-4xl font-bold text-white mt-2 mb-4">Popular Routes</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Discover the most loved boat routes from Bokkhali to nearby pristine islands. 
             Each journey offers stunning views of the Sundarbans.
           </p>
@@ -44,7 +48,7 @@ export function PopularRoutes() {
           {popularRoutes.map((route) => (
             <div 
               key={route.id}
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+              className="group bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 border border-gray-800 hover:border-blue-500/30"
             >
               {/* Image */}
               <div className="relative h-56 overflow-hidden">
@@ -53,7 +57,7 @@ export function PopularRoutes() {
                   alt={`${route.from} to ${route.to}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center text-white gap-2">
                     <span className="font-medium">{route.from}</span>
@@ -68,20 +72,23 @@ export function PopularRoutes() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <svg className="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>{route.duration}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <span className="text-2xl font-bold text-gray-900">₹{route.price}</span>
+                    <span className="text-2xl font-bold text-white">₹{route.price}</span>
                     <span className="text-gray-500 text-sm">/person</span>
                   </div>
                 </div>
 
-                <button className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 group-hover:-translate-y-0.5">
-                  View Schedules
+                <button
+                  onClick={() => onBookRoute?.(route)}
+                  className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group-hover:-translate-y-0.5"
+                >
+                  View Schedules & Book
                 </button>
               </div>
             </div>

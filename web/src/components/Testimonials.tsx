@@ -24,12 +24,12 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50">
+    <section className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">What Travelers Say</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+          <h2 className="text-4xl font-bold text-white mt-2 mb-4">What Travelers Say</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Hear from tourists who've experienced the beauty of Sundarbans islands with BokTravel.
           </p>
         </div>
@@ -38,7 +38,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-gray-900 rounded-3xl p-8 shadow-lg border border-gray-800 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
@@ -50,17 +50,17 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
+              <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.text}"</p>
 
               {/* Author */}
               <div className="flex items-center gap-4">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-cyan-100"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-blue-500/30"
                 />
                 <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="font-semibold text-white">{testimonial.name}</div>
                   <div className="text-gray-500 text-sm">{testimonial.location}</div>
                 </div>
               </div>

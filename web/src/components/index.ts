@@ -6,3 +6,5 @@ export { HowItWorks } from './HowItWorks';
 export { Features } from './Features';
 export { Testimonials } from './Testimonials';
 export { Footer } from './Footer';
+export { TravelPackages } from './TravelPackages';
+export { BookingModal } from './BookingModal';

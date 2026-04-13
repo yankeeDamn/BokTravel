@@ -14,8 +14,8 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
       </svg>
     ),
-    title: 'Pay Securely',
-    description: 'Complete your booking with secure online payment via Razorpay. Multiple payment options available.',
+    title: 'Book via WhatsApp',
+    description: 'Send your booking details directly via WhatsApp for instant confirmation. Quick and easy!',
   },
   {
     icon: (
@@ -39,12 +39,12 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Simple Process</span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">How It Works</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Simple Process</span>
+          <h2 className="text-4xl font-bold text-white mt-2 mb-4">How It Works</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Book your boat trip in 4 simple steps. Our platform ensures seamless communication 
             between you and local operators even in low connectivity areas.
           </p>
@@ -55,22 +55,22 @@ export function HowItWorks() {
             <div key={index} className="relative">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-cyan-200 to-blue-200" />
+                <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-blue-500/30 to-blue-700/30" />
               )}
               
-              <div className="relative bg-gradient-to-b from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-cyan-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group">
                 {/* Step number */}
-                <div className="absolute -top-4 -right-4 w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="absolute -top-4 -right-4 w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                   {index + 1}
                 </div>
                 
                 {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl flex items-center justify-center text-cyan-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-700/20 rounded-2xl flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300">
                   {step.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
