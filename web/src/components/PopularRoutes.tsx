@@ -88,7 +88,7 @@ export function PopularRoutes({ onBookRoute }: PopularRoutesProps) {
                   onClick={() => onBookRoute?.(route)}
                   className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group-hover:-translate-y-0.5"
                 >
-                  View Schedules &amp; Book
+                  View Schedules & Book
                 </button>
               </div>
             </div>

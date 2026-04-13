@@ -78,7 +78,7 @@ const packages: Package[] = [
   },
   {
     id: 'honeymoon',
-    name: 'Laxmipur Beach — Honeymoon Package',
+    name: 'Laxmipur Beach - Honeymoon Package',
     description:
       'A romantic getaway to Laxmipur Beach with private boat rides, candlelight dinner on the beach, and a memorable sunset cruise.',
     duration: '2 Days / 1 Night',

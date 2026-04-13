@@ -32,7 +32,7 @@ export function Hero({ onSearchClick }: HeroProps) {
           <div className="inline-flex items-center px-4 py-2 bg-black/50 backdrop-blur-sm rounded-full border border-blue-500/30 mb-8 shadow-sm">
             <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
             <span className="text-sm font-medium text-blue-200">
-              Now serving Bokkhali → Mousuni &amp; Jammu Deep
+              Now serving Bokkhali → Mousuni & Jammu Deep
             </span>
           </div>
 
