@@ -50,6 +50,7 @@ npm run preview
 
 ```
 BokTravel/
+├── vercel.json             # Root Vercel config — builds from web/, no dashboard setup needed
 ├── web/                    # Customer-facing React web app
 │   ├── src/
 │   │   ├── components/     # UI components
@@ -57,26 +58,39 @@ BokTravel/
 │   │   ├── App.tsx         # Main application
 │   │   └── main.tsx        # Entry point
 │   ├── public/             # Static assets
+│   ├── vercel.json         # Vercel config when Root Directory is set to web/
 │   └── package.json
 └── README.md
 ```
 
 ## 🌐 Deployment
 
-This project is configured for **Vercel** deployment. A root-level `vercel.json` handles everything automatically — no dashboard changes required.
+This project is configured for **Vercel** deployment. The frontend app lives in `web/`.
 
 ### Deploy to Vercel (zero-config)
 
-1. Connect your GitHub repository to Vercel
-2. Leave all build settings at their defaults — `vercel.json` at the repo root configures everything
-3. Deploy 🚀
+1. Import the GitHub repository in the [Vercel dashboard](https://vercel.com/new)
+2. **Leave all build settings at their defaults** — the root-level `vercel.json` handles everything automatically:
+   - Runs `npm ci && npm run build` inside `web/`
+   - Serves output from `web/dist`
+   - Rewrites all routes to `/index.html` so client-side navigation works on refresh
 
-Vercel will automatically:
-- Run `cd web && npm install && npm run build`
-- Serve the output from `web/dist`
-- Rewrite all routes to `/index.html` for single-page app navigation
+That's it — no manual Root Directory or build command changes required.
 
-> **Note:** The `web/vercel.json` is kept for local `vercel dev` usage inside the `web/` directory. The root `vercel.json` is what Vercel uses in production.
+### Alternative: set Root Directory in Vercel dashboard
+
+If you prefer to configure Vercel manually instead of relying on `vercel.json`:
+
+| Setting | Value |
+|---|---|
+| Root Directory | `web` |
+| Framework Preset | Vite |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+
+### Environment Variables
+
+No environment variables are required for the current static frontend. When the backend is added, update this section with the required variables (e.g. `VITE_API_URL`).
 
 ## 🛠️ Tech Stack
 
